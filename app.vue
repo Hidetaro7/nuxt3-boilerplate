@@ -7,9 +7,11 @@
     <ul>
       <li v-for="user in users">{{ user.name }} さんは {{ user.old }} 歳</li>
     </ul>
+
+    <p>error: {{ error }}</p>
   </div>
 </template>
 
 <script setup>
-const { data: users } = await useFetch("/api/users");
+const { data: users, error: error } = await useFetch("/api/users");
 </script>
